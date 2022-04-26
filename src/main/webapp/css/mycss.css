@@ -1,0 +1,27 @@
+html, body {
+    height: '100%';
+    width: '100%';
+}
+#fieldMessage {
+    width: 100%;
+    height: 400px;
+  
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
+}
+#menuStyle{
+  text-align: center;
+         color: red;
+           padding: 5px 5px;
+
+           font-size: 25px;
+}
+#menuMessage{
+
+         color: black;
+
+           font-size: 15px;
+}

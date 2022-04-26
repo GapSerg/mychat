@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>start</servlet-name>
+        <jsp-file>/startpage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>start</servlet-name>
+        <url-pattern>/start</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>registration</servlet-name>
+        <jsp-file>/registration.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <jsp-file>/mainpagechat.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletSetInData</servlet-name>
+        <servlet-class>servlets.RegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSetInData</servlet-name>
+        <url-pattern>/SetUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ToMainPageServlet</servlet-name>
+        <servlet-class>servlets.ToMainPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ToMainPageServlet</servlet-name>
+        <url-pattern>/ToMainPageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet-4</servlet-name>
+        <servlet-class>servlets.QuitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet-4</servlet-name>
+        <url-pattern>/Quit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet-5</servlet-name>
+        <servlet-class>servlets.AddMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet-5</servlet-name>
+        <url-pattern>/NewMessage</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

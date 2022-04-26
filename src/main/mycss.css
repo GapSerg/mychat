@@ -1,0 +1,42 @@
+html, body {
+    height: '100%';
+    width: '100%';
+}
+ / * Макет головы * /
+#main{
+	margin-left:200px;
+	width:950px;
+}
+ / * Центральная раскладка * /
+#middle{
+	width:950px;
+	height:500px;
+	background-color:#b6effa;
+}
+ / * В центре слева * /
+#index_left{
+	float:left;
+	margin-top:10px;
+	margin-left:10px;
+	width:180px;
+	height:480px;
+}
+ / * В центре справа * /
+#index_right{
+	float:right;
+	margin-top:10px;
+	margin-right:20px;
+	width:720px;
+	height:480px;
+	border-style:double;
+}
+ / * В центре справа * /
+#logout_middle{
+	float:right;
+	margin-top:100px;
+	margin-right:220px;
+	width:500px;
+	height:300px;
+	border-style:double;
+	background-color:#ffffff;
+}
