@@ -1,13 +1,16 @@
 package servlets;
 
 import classes.DataBaseWork;
+import classes.Message;
+import classes.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class ToMainPageServlet extends javax.servlet.http.HttpServlet {
-
+    private ConcurrentLinkedDeque<Message> messages;
 
     @Override
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
@@ -21,9 +24,22 @@ public class ToMainPageServlet extends javax.servlet.http.HttpServlet {
 
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
-        session.setAttribute("user", DataBaseWork.getUser(name, pass));
-        session.setAttribute("text", DataBaseWork.getLastMessage(10));
-        response.sendRedirect(request.getContextPath() + "/main");
+        User currentUser = DataBaseWork.getUser(name, pass);
+        if (currentUser!=null){
+            session.setAttribute("user", currentUser);
+            messages= DataBaseWork.getLastMessage(10);
+            session.setAttribute("messages", messages);
+            response.sendRedirect(request.getContextPath() + "/main");
+
+        }
+        else {
+            session.setAttribute("attentionMessage", "Такого пользователя нет");
+            getServletContext().getRequestDispatcher("/start").forward(request, response);
+        }
+
+
+
+
 
 
     }

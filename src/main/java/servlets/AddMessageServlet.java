@@ -23,7 +23,8 @@ protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servl
     String messageText = request.getParameter("text");
     User curentUser= (User) session.getAttribute("user");
     DataBaseWork.addMessage(curentUser.getId(),messageText,"main");
-    session.setAttribute("text", DataBaseWork.getLastMessage(10));
+    session.setAttribute("messages", DataBaseWork.getLastMessage(10));
+
     doGet(request, response);
 
 

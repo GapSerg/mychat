@@ -18,9 +18,18 @@
                     <input class="form-control item" type="password" name="pass" minlength="3" id="password" placeholder="Пароль" required>
                 </div>
 
-                <%-- <div class="form-group">
-                                    <label class="form-control item"> Данные не корректны</label>
-                </div> --%>
+                <div class="form-group">
+                                    <label class="form-control item">
+                                     <%   String attentionMessage;
+                                         if (session.getAttribute("attentionMessage")!=null){
+
+                                          attentionMessage= (String )session.getAttribute("attentionMessage");
+                                          session.setAttribute("attentionMessage",null);}
+                                         else { attentionMessage="";}
+                                            %>
+                                            <%= attentionMessage%>
+                                            </label>
+                </div>
 
 
                 <div class="form-group">

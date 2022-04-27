@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" language ="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <html lang="en">
@@ -12,16 +13,28 @@
 <body>
 
 
+    <c:forEach var="message" items="${sessionScope.messages}">
+  <ul>
 
-        <p id="menuStyle"> Сообщения нашего чата:</p>
-        <pre><%=(String) session.getAttribute("text")%>
-        </pre>
+          <li>Имя: <c:out value="${message}"/></c> </li>
+
+ </ul>
+      <hr />
+
+     </c:forEach>
+
+
+
 
     <form action="NewMessage" method="post" >
       <p id="menuMessage"><b>  Введите ваше сообщение,
                                 <%@ page import="classes.User"   %>
                                 <% User user = (User) session.getAttribute("user");
-                                String name = user.getName();
+
+                                String name;
+                                 if (user!=null){
+                                 name= user.getName();}
+                                 else name="";
                                 %>
                                 <%=name%>:
         </b></p>
