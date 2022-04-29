@@ -20,7 +20,7 @@ public class DataBaseWork {
                     "value (\"" + name + "\", \"" + email + "\", \"" + birthDate + "\", \"" + pass + "\")");
 
         } catch (SQLException throwable) {
-            System.out.println("No connection with Data Base userchat");
+            System.out.println("No connection with Data Base userchat for addUser");
 
 
         }

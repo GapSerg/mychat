@@ -14,7 +14,7 @@ public class QuitServlet extends javax.servlet.http.HttpServlet {
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("user", null);
+        session.removeAttribute("user");
         getServletContext().getRequestDispatcher("/start").forward(request, response);
 
     }

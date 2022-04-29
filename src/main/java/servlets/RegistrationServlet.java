@@ -26,6 +26,7 @@ public class RegistrationServlet extends javax.servlet.http.HttpServlet {
         User curentUser= DataBaseWork.getUser(name, pass);
 
         session.setAttribute("user", curentUser);
+
         doGet(request, response);
     }
 

@@ -27,8 +27,7 @@ public class ToMainPageServlet extends javax.servlet.http.HttpServlet {
         User currentUser = DataBaseWork.getUser(name, pass);
         if (currentUser!=null){
             session.setAttribute("user", currentUser);
-            messages= DataBaseWork.getLastMessage(10);
-            session.setAttribute("messages", messages);
+
             response.sendRedirect(request.getContextPath() + "/main");
 
         }

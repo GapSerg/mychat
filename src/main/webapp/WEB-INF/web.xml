@@ -24,7 +24,7 @@
 
     <servlet>
         <servlet-name>main</servlet-name>
-        <jsp-file>/mainpagechat.jsp</jsp-file>
+        <servlet-class>servlets.MainPageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>main</servlet-name>
